@@ -8,7 +8,7 @@ const env = require('dotenv');
 env.config();
 
 mongoose.set("useFindAndModify", false);
-mongoose.connect('mongodb+srv://prga:kRq4OpYiQRS2wQl6@cluster0.inwgq.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true }, () => {
+mongoose.connect('mongodb+srv://<username>:<pwd>@cluster0.inwgq.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true }, () => {
     console.log('Connected to dB');
     app.listen(3000, () => console.log("Server is running"));
 })
