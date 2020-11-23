@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+</head>
+<body>
+
+<form action="" method="POST">
+
+    <input type="text" name="content">
+    <button type="submit">Submit</button>
+</form>
+
+
+<ul>
+
+    <% todoTasks.forEach(details => { %>
+        <% if (details._id == idTask) { %>
+            <li>
+
+                <form action="/edit/<%=details._id%>" method="POST">
+                
+                    <input type="text" value="<%=details.content%>" name='content'>
+                    <button type="submit" >Confirm</button>
+                    <a href="/" > Cancel</a>
+                </form>
+            </li>
+        <% } else { %>
+
+            <li>
+
+                <div>
+                    <%=details.content%>
+                    
+                </div>
+                <a href="/edit/<%= details._id %>"  > Edit
+                </a>
+                <a href="/remove/<%= details._id %>"  > Delete 
+                </a>
+            </li>
+        <%} %>     
+
+    <%})%>
+</ul>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo page</title>
+</head>
+<body>
+    
+    <form action="/", method=POST>
+        <input type="text" name="content"/>
+        <button type="submit">Submit</button>
+    </form>
+    <ul>
+        <% todoTasks.forEach(task => { %> 
+
+            <li>
+                <div><%= task.content%> </div>
+                <a href="/edit/<%= task._id%>">Edit</a>
+                <a href="/remove/<%= task._id%>">Delete</a>
+
+
+            </li>
+
+
+       <% }) %>
+    </ul> 
+</body>
+</html>
